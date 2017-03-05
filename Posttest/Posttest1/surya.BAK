@@ -1,0 +1,18 @@
+/***
+Bikinan SuryaZ 
+***/
+
+predicates
+  universitas(symbol,symbol,integer,symbol) - nondeterm (o,i,o,o) %symbol dan integer adalah type data
+  hore(symbol,symbol,integer,symbol) - nondeterm (o,i,o,o) %nondeterm o akan menghasilkan data nya sedangkan i untuk solutions nya
+
+clauses
+  universitas(mulawarman,dokter,2016,perawat).
+  universitas(ugm,fkti,1,ilkom).
+  universitas(unhas,pertanian,1,perikanan).
+  
+  hore(Nama,Fakultas,Angkatan,Jurusan):- %yg berwarna hijau adalah variable
+  universitas(Nama,Fakultas,Angkatan,Jurusan).
+  	
+goal
+  universitas(Nama,dokter,Angkatan,Jurusan). %karena untuk matakuliah kb hanya ada 1,jadi menghasilkan 1 solution dan nama = alwi ,kelompok = 2 , kelas d.

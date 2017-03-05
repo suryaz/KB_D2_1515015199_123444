@@ -1,0 +1,14 @@
+predicates
+  universitas(symbol,symbol,integer,symbol) - nondeterm (o,i,o,o) %symbol, integer adalah type data
+  hore(symbol,symbol,integer,symbol) - nondeterm (o,i,o,o) %o untuk menghasilkan data nya, i untuk solutions nya
+
+clauses
+  universitas(mulawarman,dokter,2016,perawat).
+  universitas(ugm,fkti,1,ilkom).
+  universitas(unhas,pertanian,1,perikanan).
+  
+  hore(Nama,Fakultas,Angkatan,Jurusan):- %yg di dalam kurung adalah variable
+  universitas(Nama,Fakultas,Angkatan,Jurusan).
+  	
+goal
+  universitas(Nama,dokter,Angkatan,Jurusan). %karena universitas dokter hanya 1,jadi hasilnya 1 solution yaitu nama=mulawarman,angkatan = 2016,jurusan perawat.
